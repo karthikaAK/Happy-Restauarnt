@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .mySlides { display: none; }
+    nav {
+    background-color: #333;
+    padding: 10px;
+}
+  </style>
+</head>
+<body>
+  
+  <h2 class="w3-center" style="font-family: cursive; color: rgb(138, 48, 48);">HaPpY ReStAuRaNt</h2>
+
+  <!-- Navigation bar -->
+  <nav>
+    <ul><h2 style="font-weight: bold;font-family: cursive;color:rgb(89, 188, 201)"> ....Menu...</h2>
+      <div class="menu" style="color:aqua; font-family:cursive;">
+      <li><a href="#" onclick="showSlide(1)" style="color:rgb(221, 139, 160);">Pizza & Burger</a></li>
+      <li><a href="#" onclick="showSlide(2)" style="color:rgb(221, 139, 160);">Noodles</a></li>
+      <li><a href="#" onclick="showSlide(3)" style="color:rgb(221, 139, 160);">Cakes & Icecreams</a></li>
+    </div>
+    </ul>
+  </nav>
+
+  <div class="w3-content w3-display-container">
+    <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+    <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+
+    <img class="mySlides" src="pizza.jpg" style="width: 100%;">
+    <img class="mySlides" src="noodles.jpg" style="width: 100%;">
+    <img class="mySlides" src="cakes.jpg" style="width: 100%;">
+  </div>
+
+  <script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+      showDivs(slideIndex += n);
+    }
+
+    function showDivs(n) {
+      var x = document.getElementsByClassName("mySlides");
+      if (n > x.length) { slideIndex = 1; }
+      if (n < 1) { slideIndex = x.length; }
+      for (var i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      x[slideIndex - 1].style.display = "block";
+    }
+
+    function showSlide(slideNumber) {
+      slideIndex = slideNumber;
+      showDivs(slideIndex);
+    }
+  </script>
+</body>
+</html>
